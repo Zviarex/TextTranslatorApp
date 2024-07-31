@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+Text Translator Web App
+1. API: Text Translator API
+2. Frontend: HTML/CSS integrated with React (I also installed AXION for API pueposes)
+3. Backend: Node.js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+USER STORY:
+Text translation is essential on translating a word or a phrase that we didn't understand. As a huge fan of anime and korean dramas, I need to translate some terms into english to fully understand what's going on. Also it is best to products made from other country to translate those words to the language we're comfortable with to easily understand the content of the product.
 
-## Available Scripts
+STEPS:
 
-In the project directory, you can run:
+1. Set Up the Project
+Create a New React App:
 
-### `npm start`
+Open your terminal and run:
+"npx create-react-app translation-app"
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Navigate to the Project Directory:
+"cd translation-app"
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Install Axios for API Requests:
+"npm install axios"
 
-### `npm test`
+2. Obtain API Key from RapidAPI
+RapidAPI:
+Find the "Text Translator" API:
+Subscribe and Get Your API Key (I used the 0 cost subscription for the examination purposes):
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Create and Configure the .env File
+Create a .env File in the Root Directory of Your Project:
 
-### `npm run build`
+In the root directory of your React project, create a file named .env.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Add the Following Configuration to .env:
+"REACT_APP_API_URL=https://text-translator2.p.rapidapi.com/translate
+REACT_APP_RAPIDAPI_KEY= (the API key in the site)"
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Create the LanguageTranslator Component
+Create a LanguageTranslator.js File in the src/components Directory:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Inside the src/components directory, create a file named LanguageTranslator.js.
 
-### `npm run eject`
+Add the Following Code to LanguageTranslator.js:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Import React, useState, and axios. Define language options and create the LanguageTranslator component with state variables for source language, target language, input text, translated text, and error handling. Define the translateText function to handle the API request using axios and update the state with the response data or error message. Render the component with a form for text input, language selection, and translation display.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Create a LanguageTranslator.css File for Styling:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Create a file named LanguageTranslator.css in the src/components directory to style the component as needed.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. Update App.js to Use the LanguageTranslator Component
+Modify the App.js File:
 
-## Learn More
+Import the LanguageTranslator component and use it within the App component’s render method.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+6. Run the Application
+Start the Development Server:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Run npm start to start the application in development mode. Open http://localhost:3000 in your browser to see the Translation App in action.
